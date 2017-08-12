@@ -196,23 +196,85 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PizzasController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708010946048_InitialCreate.cs" />
+    <Compile Include="Migrations\201708010946048_InitialCreate.Designer.cs">
+      <DependentUpon>201708010946048_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708090813338_InitialModel.cs" />
+    <Compile Include="Migrations\201708090813338_InitialModel.Designer.cs">
+      <DependentUpon>201708090813338_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708091244379_SecondChange.cs" />
+    <Compile Include="Migrations\201708091244379_SecondChange.Designer.cs">
+      <DependentUpon>201708091244379_SecondChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708091329559_InsertDataToDataBase64.cs" />
+    <Compile Include="Migrations\201708091329559_InsertDataToDataBase64.Designer.cs">
+      <DependentUpon>201708091329559_InsertDataToDataBase64.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708121220175_AddAnotatioms.cs" />
+    <Compile Include="Migrations\201708121220175_AddAnotatioms.Designer.cs">
+      <DependentUpon>201708121220175_AddAnotatioms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708121706251_TheVidlySites.cs" />
+    <Compile Include="Migrations\201708121706251_TheVidlySites.Designer.cs">
+      <DependentUpon>201708121706251_TheVidlySites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708121740476_AddMembershipName.cs" />
+    <Compile Include="Migrations\201708121740476_AddMembershipName.Designer.cs">
+      <DependentUpon>201708121740476_AddMembershipName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708121753553_AddBirthday.cs" />
+    <Compile Include="Migrations\201708121753553_AddBirthday.Designer.cs">
+      <DependentUpon>201708121753553_AddBirthday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708121759452_ModifyBirthday.cs" />
+    <Compile Include="Migrations\201708121759452_ModifyBirthday.Designer.cs">
+      <DependentUpon>201708121759452_ModifyBirthday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708121800498_ModifyBirthday1.cs" />
+    <Compile Include="Migrations\201708121800498_ModifyBirthday1.Designer.cs">
+      <DependentUpon>201708121800498_ModifyBirthday1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708121801297_ModifyBirthday2.cs" />
+    <Compile Include="Migrations\201708121801297_ModifyBirthday2.Designer.cs">
+      <DependentUpon>201708121801297_ModifyBirthday2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708121952009_CheckSomething.cs" />
+    <Compile Include="Migrations\201708121952009_CheckSomething.Designer.cs">
+      <DependentUpon>201708121952009_CheckSomething.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708121952547_CheckSomething1.cs" />
+    <Compile Include="Migrations\201708121952547_CheckSomething1.Designer.cs">
+      <DependentUpon>201708121952547_CheckSomething1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Pizzas.cs" />
+    <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\green olives.png" />
+    <Content Include="Content\Images\Grren Olives.ico" />
+    <Content Include="Content\Images\Mushroom.png" />
+    <Content Include="Content\Images\onion.png" />
+    <Content Include="Content\Images\Pepperoni.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -241,14 +303,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
@@ -260,15 +314,27 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Pizzas\Random.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -277,13 +343,59 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708010946048_InitialCreate.resx">
+      <DependentUpon>201708010946048_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708090813338_InitialModel.resx">
+      <DependentUpon>201708090813338_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708091244379_SecondChange.resx">
+      <DependentUpon>201708091244379_SecondChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708091329559_InsertDataToDataBase64.resx">
+      <DependentUpon>201708091329559_InsertDataToDataBase64.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121220175_AddAnotatioms.resx">
+      <DependentUpon>201708121220175_AddAnotatioms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121706251_TheVidlySites.resx">
+      <DependentUpon>201708121706251_TheVidlySites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121740476_AddMembershipName.resx">
+      <DependentUpon>201708121740476_AddMembershipName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121753553_AddBirthday.resx">
+      <DependentUpon>201708121753553_AddBirthday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121759452_ModifyBirthday.resx">
+      <DependentUpon>201708121759452_ModifyBirthday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121800498_ModifyBirthday1.resx">
+      <DependentUpon>201708121800498_ModifyBirthday1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121801297_ModifyBirthday2.resx">
+      <DependentUpon>201708121801297_ModifyBirthday2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121952009_CheckSomething.resx">
+      <DependentUpon>201708121952009_CheckSomething.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121952547_CheckSomething1.resx">
+      <DependentUpon>201708121952547_CheckSomething1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Content\Images\Grren Olives.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
